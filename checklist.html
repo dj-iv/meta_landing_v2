@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Office Manager's Signal Checklist | UCtel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    @page {
+      size: A4;
+      margin: 15mm;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #1a2332;
+      line-height: 1.6;
+      background: #fff;
+    }
+    
+    .page {
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 20mm;
+      page-break-after: always;
+    }
+    
+    .page:last-child {
+      page-break-after: auto;
+    }
+    
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 3px solid #D4763B;
+    }
+    
+    .logo {
+      height: 50px;
+    }
+    
+    .header-text {
+      text-align: right;
+      font-size: 0.85rem;
+      color: #6b7c93;
+    }
+    
+    .header-text strong {
+      display: block;
+      color: #2E4F72;
+      font-size: 1rem;
+    }
+    
+    /* Title Page */
+    .title-page {
+      text-align: center;
+      padding-top: 60px;
+    }
+    
+    .badge {
+      display: inline-block;
+      background: #2DC5A2;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #2E4F72;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    
+    h1 span {
+      color: #D4763B;
+    }
+    
+    .subtitle {
+      font-size: 1.2rem;
+      color: #6b7c93;
+      max-width: 400px;
+      margin: 0 auto 40px;
+    }
+    
+    .meta {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: #6b7c93;
+    }
+    
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    /* Content Pages */
+    h2 {
+      font-size: 1.5rem;
+      color: #2E4F72;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #F8F5F2;
+    }
+    
+    h3 {
+      font-size: 1.1rem;
+      color: #D4763B;
+      margin: 25px 0 15px;
+    }
+    
+    p {
+      margin-bottom: 15px;
+      color: #3d5166;
+    }
+    
+    /* Checklist */
+    .checklist {
+      background: #F8F5F2;
+      border-radius: 12px;
+      padding: 25px;
+      margin: 25px 0;
+    }
+    
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      padding: 15px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    
+    .checklist-item:last-child {
+      border-bottom: none;
+    }
+    
+    .checkbox {
+      width: 24px;
+      height: 24px;
+      border: 2px solid #D4763B;
+      border-radius: 6px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    
+    .checklist-text {
+      flex: 1;
+    }
+    
+    .checklist-text strong {
+      display: block;
+      color: #2E4F72;
+      margin-bottom: 4px;
+    }
+    
+    .checklist-text span {
+      font-size: 0.9rem;
+      color: #6b7c93;
+    }
+    
+    /* Info Box */
+    .info-box {
+      background: linear-gradient(135deg, #2E4F72 0%, #1B2E4A 100%);
+      color: white;
+      padding: 25px;
+      border-radius: 12px;
+      margin: 30px 0;
+    }
+    
+    .info-box h3 {
+      color: #2DC5A2;
+      margin-top: 0;
+    }
+    
+    .info-box ul {
+      margin: 15px 0 0 20px;
+    }
+    
+    .info-box li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+    
+    /* Score Section */
+    .score-box {
+      background: #c6f6d5;
+      border-left: 4px solid #2DC5A2;
+      padding: 20px;
+      border-radius: 0 12px 12px 0;
+      margin: 30px 0;
+    }
+    
+    .score-box h3 {
+      color: #22543d;
+      margin-top: 0;
+    }
+    
+    /* CTA Section */
+    .cta-box {
+      background: #F8F5F2;
+      border: 2px solid #D4763B;
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    
+    .cta-box h3 {
+      color: #2E4F72;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+    
+    .cta-box p {
+      margin-bottom: 20px;
+    }
+    
+    .phone {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #D4763B;
+      text-decoration: none;
+    }
+    
+    .website {
+      color: #2A8C9E;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    /* Footer */
+    .footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #e2e8f0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #6b7c93;
+    }
+    
+    /* Print Styles */
+    @media print {
+      .page {
+        padding: 15mm;
+      }
+      
+      body {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page 1: Title -->
+  <div class="page title-page">
+    <div class="header">
+      <img src="assets/uctel-logo.png" alt="UCtel" class="logo">
+      <div class="header-text">
+        <strong>FREE GUIDE</strong>
+        Downloaded from offices.uctel.co.uk
+      </div>
+    </div>
+    
+    <div class="badge">📋 5-Minute Diagnostic</div>
+    
+    <h1>The Office Manager's <span>Signal Checklist</span></h1>
+    
+    <p class="subtitle">5 questions to diagnose your building's mobile signal problems — and what to do about them.</p>
+    
+    <div class="meta">
+      <div class="meta-item">⏱️ 5 minutes to complete</div>
+      <div class="meta-item">🏢 For offices of any size</div>
+      <div class="meta-item">✓ Instant results</div>
+    </div>
+    
+    <div style="margin-top: 80px; color: #6b7c93; font-size: 0.9rem;">
+      Brought to you by UCtel — 500+ UK installations
+    </div>
+  </div>
+
+  <!-- Page 2: The Checklist -->
+  <div class="page">
+    <div class="header">
+      <img src="assets/uctel-logo.png" alt="UCtel" class="logo">
+    </div>
+    
+    <h2>The 5-Question Diagnostic</h2>
+    
+    <p>Walk through your office and check each area. Be honest — even one "yes" means you have a problem worth fixing.</p>
+    
+    <div class="checklist">
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div class="checklist-text">
+          <strong>1. The Basement or Ground Floor</strong>
+          <span>Do you get zero bars, dropped calls, or "No Service" in basement meeting rooms, storage areas, or ground floor spaces?</span>
+        </div>
+      </div>
+      
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div class="checklist-text">
+          <strong>2. Interior Offices and Meeting Rooms</strong>
+          <span>Do staff complain about poor signal in interior offices, conference rooms, or anywhere away from windows?</span>
+        </div>
+      </div>
+      
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div class="checklist-text">
+          <strong>3. The Stairwells and Elevators</strong>
+          <span>Do calls drop when walking between floors, or is there no signal in stairwells and lift areas?</span>
+        </div>
+      </div>
+      
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div class="checklist-text">
+          <strong>4. The Car Park</strong>
+          <span>Can you make reliable calls from your building's car park, loading bay, or outdoor areas?</span>
+        </div>
+      </div>
+      
+      <div class="checklist-item">
+        <div class="checkbox"></div>
+        <div class="checklist-text">
+          <strong>5. Staff Workarounds</strong>
+          <span>Do employees use WhatsApp instead of calling clients? Walk to windows for signal? Complain about missed calls?</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="score-box">
+      <h3>Your Score</h3>
+      <p><strong>0-1 checks:</strong> Minor issues — might be manageable</p>
+      <p><strong>2-3 checks:</strong> Moderate problems — affecting productivity</p>
+      <p><strong>4-5 checks:</strong> Significant dead zones — definitely fixable</p>
+    </div>
+  </div>
+
+  <!-- Page 3: Understanding the Problem -->
+  <div class="page">
+    <div class="header">
+      <img src="assets/uctel-logo.png" alt="UCtel" class="logo">
+    </div>
+    
+    <h2>Why Your Office Has Dead Zones</h2>
+    
+    <p>It's not your mobile network. It's your building.</p>
+    
+    <p>Modern offices are designed to be energy-efficient and secure. Unfortunately, the same materials that keep heat in and unauthorised visitors out also block mobile signals:</p>
+    
+    <div class="info-box">
+      <h3>The Signal Killers</h3>
+      <ul>
+        <li><strong>Concrete and steel frames</strong> — The structural backbone of most modern offices, impenetrable to radio waves</li>
+        <li><strong>Low-E glass windows</strong> — Energy-efficient coatings that reflect heat... and mobile signals</li>
+        <li><strong>Metal cladding and insulation</strong> — Creates a Faraday cage effect</li>
+        <li><strong>Underground basements</strong> — Earth and concrete block signals completely</li>
+      </ul>
+    </div>
+    
+    <h3>Why WiFi Calling Isn't the Answer</h3>
+    
+    <p>Many IT managers suggest WiFi calling as a workaround. Here's why it falls short:</p>
+    
+    <ul style="margin-left: 20px; color: #3d5166;">
+      <li style="margin-bottom: 10px;"><strong>Inconsistent handover:</strong> Calls drop when moving between WiFi and mobile networks</li>
+      <li style="margin-bottom: 10px;"><strong>Emergency calls:</strong> WiFi calling may not support emergency services properly</li>
+      <li style="margin-bottom: 10px;"><strong>Visitor experience:</strong> Clients and guests don't have your WiFi password</li>
+      <li style="margin-bottom: 10px;"><strong>Professional image:</strong> "Can you hear me now?" doesn't inspire confidence</li>
+    </ul>
+  </div>
+
+  <!-- Page 4: The Solution -->
+  <div class="page">
+    <div class="header">
+      <img src="assets/uctel-logo.png" alt="UCtel" class="logo">
+    </div>
+    
+    <h2>The Fix (And What to Avoid)</h2>
+    
+    <h3>❌ Don't Waste Time On:</h3>
+    
+    <ul style="margin-left: 20px; margin-bottom: 25px; color: #3d5166;">
+      <li style="margin-bottom: 12px;"><strong>Switching mobile providers</strong> — All networks use the same frequencies. If one doesn't work, none will.</li>
+      <li style="margin-bottom: 12px;"><strong>Consumer signal boosters from Amazon</strong> — Illegal in the UK, interfere with emergency services, Ofcom can fine you.</li>
+      <li style="margin-bottom: 12px;"><strong>Asking staff to "just use WhatsApp"</strong> — Unprofessional, doesn't solve the root problem.</li>
+    </ul>
+    
+    <div class="info-box">
+      <h3>✓ The Legal, Permanent Solution</h3>
+      <p style="margin-bottom: 15px;"><strong>Ofcom-compliant signal boosting systems</strong> — Professionally surveyed, designed, and installed for your specific building.</p>
+      
+      <ul>
+        <li>Legal and licensed — fully compliant with UK regulations</li>
+        <li>Works with EE, O2, Vodafone &amp; Three simultaneously</li>
+        <li>Installed by certified engineers</li>
+        <li>Permanent infrastructure — not a temporary fix</li>
+        <li>Coverage where you need it — basements, meeting rooms, everywhere</li>
+      </ul>
+    </div>
+    
+    <h3>How It Works</h3>
+    
+    <ol style="margin-left: 20px; color: #3d5166;">
+      <li style="margin-bottom: 10px;"><strong>Site Survey:</strong> We analyse your building's structure and signal patterns</li>
+      <li style="margin-bottom: 10px;"><strong>Custom Design:</strong> System designed specifically for your layout</li>
+      <li style="margin-bottom: 10px;"><strong>Professional Install:</strong> Certified engineers install internal antennas and amplifiers</li>
+      <li style="margin-bottom: 10px;"><strong>Full Coverage:</strong> Every dead zone eliminated, guaranteed</li>
+    </ol>
+  </div>
+
+  <!-- Page 5: Next Steps -->
+  <div class="page">
+    <div class="header">
+      <img src="assets/uctel-logo.png" alt="UCtel" class="logo">
+    </div>
+    
+    <h2>Think Your Building Qualifies?</h2>
+    
+    <p>If you checked 2 or more boxes on the diagnostic, your office is almost certainly fixable. Most buildings we work on have similar profiles — and we eliminate dead zones in 100% of eligible installations.</p>
+    
+    <div class="cta-box">
+      <h3>Ready to Fix Your Signal?</h3>
+      
+      <p>Book a free 15-minute diagnostic call. We'll ask about your building, explain exactly how the system works, and tell you honestly if we can help.</p>
+      
+      <p>No hard sell. No obligation. Just straight answers.</p>
+      
+      <p style="margin-top: 25px;"><a href="tel:03333444417" class="phone">0333 344 4417</a></p>
+      
+      <p style="margin-top: 15px; font-size: 0.9rem;">Or visit <a href="https://offices.uctel.co.uk" class="website">offices.uctel.co.uk</a></p>
+    </div>
+    
+    <div class="score-box" style="margin-top: 40px;">
+      <h3>The UCtel Guarantee</h3>
+      <p>Every eligible installation comes with a full <strong>3-month money-back guarantee</strong>. If the system doesn't meet your agreed coverage targets, we'll fix it or refund you. No small print, no runaround.</p>
+    </div>
+    
+    <div class="footer">
+      <p>© 2026 UCtel Ltd. All rights reserved.</p>
+      <p>Ofcom compliant • 500+ UK installations • 3-year warranty</p>
+    </div>
+  </div>
+
+</body>
+</html>
