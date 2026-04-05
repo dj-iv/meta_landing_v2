@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Your Office Has Dead Zones | UCtel</title>
+
+  <!-- SEO -->
+  <meta name="description" content="There's a reason your corner office gets no bars. Learn why modern offices block mobile signals — and the legal, permanent fix that doesn't involve switching providers." />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Why Your Office Has Dead Zones | UCtel" />
+  <meta property="og:description" content="Modern offices are surprisingly good at killing mobile signals. Here's why — and what you can do about it." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://offices.uctel.co.uk" />
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '955998933467443');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=955998933467443&ev=PageView&noscript=1"
+  /></noscript>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HYM5LVN6B2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HYM5LVN6B2');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --orange:        #D4763B;
+      --orange-dark:   #b85f28;
+      --teal:          #2A8C9E;
+      --teal-dark:     #1f6e7d;
+      --navy:          #2E4F72;
+      --navy-deep:     #1B2E4A;
+      --cream-light:   #F8F5F2;
+      --accent-teal:   #2DC5A2;
+      --white:         #ffffff;
+      --text-dark:     #1a2332;
+      --text-mid:      #3d5166;
+      --text-muted:    #6b7c93;
+      --font:          'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --radius:        14px;
+      --radius-sm:     8px;
+      --shadow:        0 4px 20px rgba(0, 0, 0, 0.09);
+      --shadow-lg:     0 12px 48px rgba(0, 0, 0, 0.18);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font);
+      color: var(--text-dark);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* Header */
+    .header {
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo { display: flex; align-items: center; gap: 0.75rem; }
+    .logo img { height: 42px; }
+    .phone {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+      color: var(--white);
+      padding: 5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 80%;
+      height: 200%;
+      background: radial-gradient(ellipse, rgba(42,140,158,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.1);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(10px);
+    }
+    .hero-left h1 {
+      font-size: 3rem;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      font-weight: 800;
+    }
+    .hero-left h1 em {
+      font-style: normal;
+      color: var(--accent-teal);
+    }
+    .hero-left p {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      opacity: 0.9;
+      max-width: 90%;
+    }
+
+    /* Form Box */
+    .form-box {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      color: var(--text-dark);
+      box-shadow: var(--shadow-lg);
+    }
+    .form-box h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: var(--navy-deep);
+    }
+    .form-box p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      font-size: 0.875rem;
+      color: var(--text-mid);
+    }
+    .form-group input {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid #e2e8f0;
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      transition: border-color 0.2s;
+      font-family: var(--font);
+    }
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--teal);
+    }
+    .btn-primary {
+      width: 100%;
+      padding: 1rem 1.5rem;
+      background: var(--orange);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: var(--font);
+    }
+    .btn-primary:hover { background: var(--orange-dark); }
+    .form-disclaimer {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 1rem;
+      text-align: center;
+    }
+    .form-disclaimer a { color: var(--teal); text-decoration: underline; }
+
+    /* Trust Bar */
+    .trust-bar {
+      background: var(--cream-light);
+      padding: 1.5rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .trust-items {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text-mid);
+    }
+    .trust-item::before {
+      content: "✓";
+      color: var(--accent-teal);
+      font-weight: bold;
+    }
+
+    /* Sections */
+    .section { padding: 5rem 0; }
+    .section-title {
+      font-size: 2.25rem;
+      color: var(--navy-deep);
+      margin-bottom: 1rem;
+      text-align: center;
+      font-weight: 700;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.1rem;
+    }
+
+    /* Problem Section */
+    .problem-grid {
+      max-width: 1200px;
+      margin: 3rem auto 0;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .problem-card {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .problem-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+    .problem-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .problem-card h3 {
+      color: var(--navy-deep);
+      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+    }
+    .problem-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Solution Section */
+    .solution { background: var(--cream-light); }
+    .solution-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      text-align: center;
+    }
+    .solution-list {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      margin: 2rem 0;
+      text-align: left;
+      box-shadow: var(--shadow);
+    }
+    .solution-list h3 {
+      color: #e53e3e;
+      margin-bottom: 1.25rem;
+      font-size: 1.1rem;
+    }
+    .solution-list ul {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+    .solution-list li {
+      padding: 0.75rem 0;
+      padding-left: 2rem;
+      position: relative;
+      color: var(--text-mid);
+    }
+    .solution-list li::before {
+      content: "✕";
+      position: absolute;
+      left: 0;
+      color: #e53e3e;
+      font-weight: bold;
+    }
+    .solution-highlight {
+      background: linear-gradient(135deg, #c6f6d5 0%, #9ae6b4 100%);
+      border-left: 4px solid var(--accent-teal);
+      padding: 1.5rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-top: 1.5rem;
+    }
+    .solution-highlight strong {
+      color: #22543d;
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    .networks {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #276749;
+      font-weight: 500;
+    }
+
+    /* Social Proof */
+    .social-proof { background: var(--white); }
+    .logos {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .logos img {
+      height: 40px;
+      width: auto;
+      opacity: 0.7;
+      filter: grayscale(100%);
+      transition: opacity 0.2s;
+    }
+    .logos img:hover {
+      opacity: 1;
+    }
+    .testimonial {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .testimonial-card {
+      background: var(--cream-light);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: """;
+      font-size: 5rem;
+      color: var(--teal);
+      opacity: 0.3;
+      position: absolute;
+      top: 0.5rem;
+      left: 1.5rem;
+      line-height: 1;
+      font-family: Georgia, serif;
+    }
+    .testimonial-card p {
+      font-size: 1.125rem;
+      color: var(--text-mid);
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      padding-left: 2rem;
+      line-height: 1.7;
+    }
+    .testimonial-card cite {
+      color: var(--navy-deep);
+      font-weight: 600;
+      font-style: normal;
+      padding-left: 2rem;
+      display: block;
+    }
+
+    /* Guarantee */
+    .guarantee {
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+      color: var(--white);
+    }
+    .guarantee .section-title { color: var(--white); }
+    .guarantee .section-subtitle { color: rgba(255,255,255,0.8); }
+    .guarantee-grid {
+      max-width: 1200px;
+      margin: 3rem auto 0;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .guarantee-card {
+      text-align: center;
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: var(--radius);
+    }
+    .guarantee-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .guarantee-card h3 {
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .guarantee-card p {
+      opacity: 0.9;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .guarantee-note {
+      text-align: center;
+      margin-top: 3rem;
+      opacity: 0.7;
+      font-size: 0.875rem;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: var(--cream-light);
+      text-align: center;
+    }
+    .cta-box {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 3rem;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .cta-box h3 {
+      color: var(--navy-deep);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    .cta-box p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      background: transparent;
+      color: var(--teal);
+      border: 2px solid var(--teal);
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+      font-family: var(--font);
+    }
+    .btn-secondary:hover {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--navy-deep);
+      color: var(--white);
+      padding: 2rem 0;
+    }
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-logo { display: flex; align-items: center; gap: 0.75rem; }
+    .footer-logo img { height: 36px; filter: brightness(0) invert(1); }
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-content { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-left h1 { font-size: 2.25rem; }
+      .problem-grid { grid-template-columns: 1fr; }
+      .guarantee-grid { grid-template-columns: 1fr; }
+      .trust-items { gap: 1rem; flex-direction: column; text-align: center; }
+      .logos { gap: 2rem; }
+      .logos img { height: 32px; }
+      .footer-content { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <a href="#" class="logo">
+        <img src="assets/uctel-logo.png" alt="UCtel">
+      </a>
+      <a href="tel:03333444417" class="phone">
+        <span>📞</span> 0333 344 4417
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-badge">
+          <span>🏢</span> Office Signal Solutions
+        </div>
+        <h1>There's a reason your corner office gets <em>no bars...</em></h1>
+        <p>Modern offices are surprisingly good at killing mobile signals. Concrete, steel frames, and energy-efficient glass all block the radio waves your phone needs. Most IT managers just accept it. But there's a legal, permanent fix — and it doesn't involve switching providers or hoping WiFi calling works.</p>
+      </div>
+      <div class="hero-right">
+        <div class="form-box">
+          <h2>Get the Office Manager's Signal Checklist</h2>
+          <p>Not sure if your building qualifies? This 5-minute checklist helps you identify the dead zones costing your team productivity.</p>
+          <form action="/api/subscribe" method="POST">
+            <div class="form-group">
+              <label for="email">Work Email *</label>
+              <input type="email" id="email" name="email" placeholder="you@company.com" required>
+            </div>
+            <button type="submit" class="btn-primary">Get the Checklist →</button>
+            <p class="form-disclaimer">By submitting you agree to our <a href="#">Privacy Policy</a>. We'll never share your details.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <section class="trust-bar">
+    <div class="trust-items">
+      <div class="trust-item">Ofcom Compliant — Fully legal & licensed</div>
+      <div class="trust-item">500+ UK Installations</div>
+      <div class="trust-item">All Networks — EE, O2, Vodafone & Three</div>
+      <div class="trust-item">3-Year Warranty</div>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section class="section">
+    <h2 class="section-title">Why Every Office Has That One Dead Zone</h2>
+    <p class="section-subtitle">You know the spots. The basement meeting room. The far corner office. The stairwell. The car park. Modern buildings are designed to be energy-efficient and secure. They're not designed for mobile signals to pass through.</p>
+    
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-icon">📞</div>
+        <h3>Dropped Calls</h3>
+        <p>Client calls that cut out mid-conversation, damaging your professional reputation every single day.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">📶</div>
+        <h3>Dead Zones</h3>
+        <p>Basements, meeting rooms, and interior offices with zero signal — restricting where your team can work.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">🐌</div>
+        <h3>Slow Data</h3>
+        <p>Weak signal means buffering on Teams and Zoom, slow mobile data, and frustrated staff.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Section -->
+  <section class="section solution">
+    <div class="solution-content">
+      <h2 class="section-title">There's a Fix (And It's Not What You Think)</h2>
+      <p class="section-subtitle">It's not your network. It's your building. And it's solvable.</p>
+      
+      <div class="solution-list">
+        <h3>We're not talking about:</h3>
+        <ul>
+          <li>Switching to a different mobile provider</li>
+          <li>Asking staff to use WhatsApp instead of calling</li>
+          <li>Illegal signal boosters that interfere with emergency services</li>
+        </ul>
+        
+        <div class="solution-highlight">
+          <strong>UCtel installs Ofcom-compliant signal boosting systems</strong>
+          Professionally surveyed, designed, and fitted for your specific building. Legal, licensed, and permanent.
+          <div class="networks">✓ Works with EE, O2, Vodafone & Three simultaneously</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof -->
+  <section class="section social-proof">
+    <h2 class="section-title">Trusted by 500+ UK Businesses</h2>
+    <p class="section-subtitle">From financial services to the NHS, office buildings across the UK rely on UCtel for dependable in-building mobile coverage.</p>
+    
+    <div class="logos">
+      <img src="assets/logos/National_Health_Service_(England)_logo.svg.png" alt="NHS">
+      <img src="assets/logos/hilton-logo.svg" alt="Hilton">
+      <img src="assets/logos/macquarie-logo.png" alt="Macquarie">
+      <img src="assets/logos/nationalgridlogo.gif" alt="National Grid">
+      <img src="assets/logos/allwyn-logo.png" alt="Allwyn">
+      <img src="assets/logos/Wren_Kitchens.svg" alt="Wren Kitchens">
+    </div>
+
+    <div class="testimonial">
+      <div class="testimonial-card">
+        <p>UCtel's solution has not only resolved our connectivity challenges but has also significantly boosted our operational efficiency. The seamless communication enabled by UCtel's system has been instrumental in enhancing our day-to-day operations.</p>
+        <cite>— Allwyn UK, National Lottery operator, London</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guarantee -->
+  <section class="section guarantee">
+    <h2 class="section-title">If It Doesn't Work, You Don't Pay</h2>
+    <p class="section-subtitle">We're so confident in our signal boosting solutions that every eligible installation comes with a full 3-month money-back guarantee — no small print, no runaround.</p>
+    
+    <div class="guarantee-grid">
+      <div class="guarantee-card">
+        <div class="guarantee-icon">🗓</div>
+        <h3>3 Months to Decide</h3>
+        <p>From the day of installation you have a full 3 months to confirm the system meets your agreed coverage targets.</p>
+      </div>
+      <div class="guarantee-card">
+        <div class="guarantee-icon">🤝</div>
+        <h3>We Fix It First</h3>
+        <p>Before any refund is processed, UCtel is given a fair chance to diagnose and resolve the issue.</p>
+      </div>
+      <div class="guarantee-card">
+        <div class="guarantee-icon">💷</div>
+        <h3>Straightforward Refund</h3>
+        <p>If we can't fix it, you get your money back. No fuss, no runaround.</p>
+      </div>
+    </div>
+    
+    <p class="guarantee-note">Eligible installations only. Large projects may include a pilot phase.</p>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta-section">
+    <div class="cta-box">
+      <h3>Rather Just Talk?</h3>
+      <p>Book a free 15-minute diagnostic call. We'll ask about your building, explain how the system works, and tell you honestly if we can help.</p>
+      <a href="#contact" class="btn-secondary">Book a Free Call →</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="assets/uctel-logo.png" alt="UCtel">
+      </div>
+      <div class="footer-links">
+        <a href="https://uctel.co.uk">UCtel.co.uk</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <a href="tel:03333444417">0333 344 4417</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
